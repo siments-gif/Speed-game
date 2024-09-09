@@ -4,6 +4,10 @@ import GameBoard from './components/gameBoard/gameBoard'
 
 function App() {
   const [showBoard, setShowBoard] = useState(false)
+  
+  const endGame = () => {
+    setShowBoard(false)
+  }
   return (
     <>
     {showBoard ? (

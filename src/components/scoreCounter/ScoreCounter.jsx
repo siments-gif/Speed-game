@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
-const ScoreCounter = () => {
+const ScoreCounter = ({ score }) => {
   return (
-    <div>ScoreCounter</div>
+    <div>Poeng: {score}</div>
   )
 }
 
