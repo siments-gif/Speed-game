@@ -4,7 +4,9 @@ import React from 'react'
 
 const ScoreCounter = ({ score }) => {
   return (
-    <div>Poeng: {score}</div>
+    <div>
+        <h2>Poeng: {score}</h2>
+    </div>
   )
 }
 

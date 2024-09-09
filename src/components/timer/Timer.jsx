@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react'
 
-const Timer = () => {
+const Timer = ({ timeIsUp }) => {
     const [time, setTime] = useState(60);
 
     useEffect(() => {
@@ -9,8 +10,10 @@ const Timer = () => {
                 setTime(prevTime => prevTime - 1)
             }, 1000);
             return () => clearInterval(timerId)
+        } else {
+            timeIsUp();
         }
-    }, [time])
+    }, [time, timeIsUp])
   return (
     <div>
         <h2>Tid gjenstår: {time} sekunder</h2>
