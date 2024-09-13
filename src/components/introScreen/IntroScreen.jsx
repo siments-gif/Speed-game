@@ -6,6 +6,8 @@ const IntroScreen = ({ onStartGame }) => {
   const handleGameStart = () => {
     if(playerName.trim()) {
         onStartGame(playerName);
+    } else {
+        alert("Skriv inn navnet ditt for å starte spillet")
     }
   };
   
