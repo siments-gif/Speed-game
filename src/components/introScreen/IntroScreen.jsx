@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./introScreen.css"
 
 const IntroScreen = ({ onStartGame }) => {
   const [playerName, setPlayerName] = useState("");

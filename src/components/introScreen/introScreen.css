@@ -1,0 +1,19 @@
+.introBoard {
+    margin: 30vh;
+    padding: 10%;
+    background-color: rebeccapurple;
+    
+    border-radius: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.introContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}

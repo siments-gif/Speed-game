@@ -8,28 +8,37 @@ import HighScoreTable from './components/highScore/highScoreTable';
 function App() {
   const [showBoard, setShowBoard] = useState(false);
   const [playerName, setPlayerName] = useState("");
+  const [gameEnd, setGameEnd] = useState(false)
   
   const gameStart = (name) => {
     setPlayerName(name);
-    setShowBoard(true)
+    setShowBoard(true);
+    setGameEnd(false);
   };
 
   const handleGameEnding = (score, addHighScore) => {
     addHighScore(playerName, score);
     setShowBoard(false);
+    setGameEnd(true);
   }
   
   return (
     <HighScoreState>
-      {({ highScores, addHighScore }) => (
+      {({ highScores = [], addHighScore }) => (
         <div className='mainApp'>
-          {!showBoard ? (
-            <>
-            <IntroScreen  onStartGame={gameStart}/>
-            {Array.isArray(highScores) && highScores.length > 0 && <HighScoreTable highScores={highScores}/>}
-            </>
-          ) : (
+          {/* Spillet starter */}
+          {!showBoard && !gameEnd && (
+            <IntroScreen onStartGame={gameStart}/>
+          )}
+
+          {/* Spillet foregår */}
+          {showBoard && !gameEnd && (
             <GameBoard gameEnding={(score) => handleGameEnding(score, addHighScore)}/>
+          )}
+
+          {/* Spillet avsluttes */}
+          {!showBoard && gameEnd && (
+             <HighScoreTable highScores={highScores}/>
           )}
         </div>
       )}
