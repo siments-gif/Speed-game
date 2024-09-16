@@ -9,8 +9,7 @@ const HighScoreTable = () => {
     const savedScores = JSON.parse(localStorage.getItem("highscores")) || [];
     setHighScore(savedScores)
   }, [])
-
-  console.log('High Scores:', highScore);
+  
   return (
     <div className='highScoreTable'>
       <h2>Lederbrett</h2>
