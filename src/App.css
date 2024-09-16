@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+img {
+  height: 50px;
+  width: 50px;
+}
+
 input {
   padding: .5rem;
   border-radius: .5rem;
