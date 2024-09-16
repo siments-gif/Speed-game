@@ -14,11 +14,7 @@ const GameBoard = ({ gameEnding }) => {
   }
 
   const handleFigureScore = (isPositive) => {
-    if(isPositive) {
-      setScore((prevScore) => prevScore + 100);
-    } else {
-      setScore((prevScore) => prevScore - 50);
-    }
+    setScore(prevScore => prevScore + (isPositive ? 100 : -50))
   };
 
   return (
