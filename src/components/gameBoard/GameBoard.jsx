@@ -13,16 +13,16 @@ const GameBoard = ({ gameEnding }) => {
     gameEnding(score);
   }
 
-  const handleFigureScore = (isPositive) => {
-    setScore(prevScore => prevScore + (isPositive ? 100 : -50))
+  const handleFigureScore = (adjustScore) => {
+    setScore(prevScore => prevScore + adjustScore)
   };
 
   return (
     <section className='board'>
         <div className='boardContent'>
             <ScoreCounter score={score}/>
-            <Figures onFigureClick={handleFigureScore}/>
             <Timer timeIsUp={handleTimeIsUp}/>
+            <Figures onFigureClick={handleFigureScore}/>
         </div>
     </section>
   )

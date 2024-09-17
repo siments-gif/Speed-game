@@ -7,12 +7,13 @@ const importAllImages = (glob) => {
 
 const Figures = ({ onFigureClick }) => {
   const [figures, setFigures] = useState(null);
+  const [appearTime, setAppearTime] = useState(null);
   
   const set1 = [
     "/src/assets/figures/Set1/Backend_bakgrunn.png",
-    "/src/assets/figures/Set1/Backend_bakgrunn.png",
-    "/src/assets/figures/Set1/Backend_bakgrunn.png",
-    "/src/assets/figures/Set1/Backend_bakgrunn.png"
+    "/src/assets/figures/Set1/Frontend_bakgrunn.png",
+    "/src/assets/figures/Set1/Forretningsutvikler_bakgrunn.png",
+    "/src/assets/figures/Set1/Cybersikkerhet_bakgrunn.png"
   ]
   
   const set2 = [
@@ -23,7 +24,7 @@ const Figures = ({ onFigureClick }) => {
 
 useEffect(() => {
   const randomImage = () => {
-    const randomize = Math.random() < 0.5 ? set1 : set2;
+    const randomize = Math.random() < 0.25 ? set2 : set1;
     const randomId = Math.floor(Math.random() * randomize.length);
     const isPositive = randomize === set1;
     
@@ -33,6 +34,7 @@ useEffect(() => {
       x: Math.random() * 80,
       y: Math.random() * 80
     });
+    setAppearTime(Date.now());
   };
 
   randomImage();
@@ -44,7 +46,19 @@ useEffect(() => {
 
 const handleClicking = () => {
   if(figures) {
-    onFigureClick(figures.isPositive);
+    const presentTime = Date.now();
+    const timeDiff = (presentTime - appearTime) / 1000;
+
+    let adjustScore;
+    if(figures.isPositive) {
+      adjustScore = Math.max(0, 100 - timeDiff * 50);
+    } else {
+      adjustScore = -50;
+    }
+
+    adjustScore = Math.round(adjustScore);
+
+    onFigureClick(adjustScore);
     setFigures(null);
   }
 };
