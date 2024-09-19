@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import { useState } from 'react'
 import "./GameBoard.css"
 import Figures from "../gameFigures/Figures"
 import ScoreCounter from '../scoreCounter/ScoreCounter'

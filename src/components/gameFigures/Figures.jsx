@@ -1,9 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
-
-const importAllImages = (glob) => {
-  return Object.values(glob).map((image) => image)
-}
+import { useEffect, useState } from 'react'
 
 const Figures = ({ onFigureClick }) => {
   const [figures, setFigures] = useState(null);

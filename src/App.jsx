@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css'
 import GameBoard from './components/gameBoard/gameBoard';
 import IntroScreen from './components/introScreen/IntroScreen';
