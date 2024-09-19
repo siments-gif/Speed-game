@@ -5,8 +5,8 @@
 }
 
 .mainApp {
-  position: relative;
-  top: 18vh;
+  position: absolute;
+  top: 15vh;
   left: 10vw;
   padding: 10%;
   height: 75%;
@@ -40,4 +40,5 @@ button {
   font-weight: 600;
 
   background-color: red;
+  cursor: pointer;
 }

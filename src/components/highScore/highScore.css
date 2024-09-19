@@ -5,6 +5,11 @@
         justify-content: center;
 }
 
+.highScoreTable button {
+        place-self: center;
+        margin-top: 1rem;
+}
+
 
 .highScoreTable h2 {
         margin-bottom: 1rem;

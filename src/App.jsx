@@ -26,6 +26,12 @@ function App() {
     setShowBoard(false);
     setGameEnd(true);
   }
+
+  const handleReturn = () => {
+    setPlayerName("");
+    setGameEnd(false);
+    setShowBoard(false);
+  }
   
   return (
         <div className='mainApp'>
@@ -41,7 +47,7 @@ function App() {
 
           {/* Spillet avsluttes */}
           {!showBoard && gameEnd && (
-             <HighScoreTable />
+             <HighScoreTable returnToIntro={handleReturn}/>
           )}
         </div>
   )

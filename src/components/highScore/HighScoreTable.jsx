@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import "./highScore.css"
 
-const HighScoreTable = () => {
+const HighScoreTable = ({ returnToIntro }) => {
   const [highScore, setHighScore] = useState([]);
 
   useEffect(() => {
@@ -37,6 +37,7 @@ const HighScoreTable = () => {
           </table>
         )}
       </ul>
+      <button onClick={returnToIntro}>Start på nytt</button>
     </div>
   )
 }

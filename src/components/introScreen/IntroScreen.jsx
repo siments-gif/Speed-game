@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./introScreen.css"
+import HighScoreTable from '../highScore/highScoreTable';
 
 const IntroScreen = ({ onStartGame }) => {
   const [playerName, setPlayerName] = useState("");
