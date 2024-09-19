@@ -44,7 +44,7 @@ function App() {
              <HighScoreTable />
           )}
         </div>
-      )
-    }
+  )
+}
 
 export default App

@@ -15,11 +15,26 @@ const HighScoreTable = () => {
       <h2>Lederbrett</h2>
       <ul>
         {highScore.length === 0 ? (
-          <li>Ingen på lederbrett enda</li>
+          <h3>Ingen på lederbrettet</h3>
         ) : (
-          highScore.map((score, index) => (
-          <li key={index}>{score.name} : {score.score}</li>
-        ))
+          <table>
+            <thead>
+              <tr>
+                <th>Top</th>
+                <th>Navn</th>
+                <th>Poeng</th>
+              </tr>
+            </thead>
+            <tbody>
+              {highScore.map((score, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{score.name}</td>
+                  <td>{score.score}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         )}
       </ul>
     </div>

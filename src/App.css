@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+.mainApp {
+  position: relative;
+  top: 18vh;
+  left: 10vw;
+  padding: 10%;
+  height: 75%;
+  width: 75%;
+  background-color: rebeccapurple;
+  
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 img {
   height: 50px;
   width: 50px;

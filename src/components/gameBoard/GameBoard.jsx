@@ -19,11 +19,16 @@ const GameBoard = ({ gameEnding }) => {
 
   return (
     <section className='board'>
-        <div className='boardContent'>
+        <div className='boardHeader'>
+          <div className='headContent'>
             <ScoreCounter score={score}/>
             <Timer timeIsUp={handleTimeIsUp}/>
-            <Figures onFigureClick={handleFigureScore}/>
+          </div>
         </div>
+          <div className='boardFigures'>
+            <Figures onFigureClick={handleFigureScore}/>
+          </div>
+        
     </section>
   )
 }

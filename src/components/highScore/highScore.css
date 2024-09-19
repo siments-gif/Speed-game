@@ -1,12 +1,27 @@
-.highScoreTable {
-        margin: 30vh;
-        padding: 10%;
-        background-color: rebeccapurple;
-        
-        border-radius: 2rem;
-    
+.highScoreTable {   
+        width: 55%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+}
+
+
+.highScoreTable h2 {
+        margin-bottom: 1rem;
+        text-align: center;
+}
+
+.highScoreTable table {
+        width: 100%;
+        border-collapse: collapse;
+}
+
+.highScoreTable th, 
+.highScoreTable td {
+        padding: 10px;
+        border: 2px solid black;
+}
+
+.highScoreTable th {
+        background-color: aquamarine;
 }
