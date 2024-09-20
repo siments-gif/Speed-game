@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 const Figures = ({ onFigureClick }) => {
   const [figures, setFigures] = useState(null);
   const [appearTime, setAppearTime] = useState(null);
+  const [intervalTime, setIntervalTime] = useState(2000);
   
   const set1 = [
     "/src/assets/figures/Set1/Backend_bakgrunn.png",
@@ -19,7 +20,7 @@ const Figures = ({ onFigureClick }) => {
 
 useEffect(() => {
   const randomImage = () => {
-    const randomize = Math.random() < 0.25 ? set2 : set1;
+    const randomize = Math.random() < 0.75 ? set1 : set2;
     const randomId = Math.floor(Math.random() * randomize.length);
     const isPositive = randomize === set1;
     
@@ -34,26 +35,27 @@ useEffect(() => {
 
   randomImage();
 
-  const intervalId = setInterval(randomImage, 2000);
+  const intervalId = setInterval(randomImage, intervalTime);
 
   return () => clearInterval(intervalId);
-}, []);
+}, [intervalTime]);
 
 const handleClicking = () => {
   if(figures) {
     const presentTime = Date.now();
     const timeDiff = (presentTime - appearTime) / 1000;
 
-    let adjustScore;
+    let adjustScore = figures.isPositive
+    ? Math.max(0, 100 - timeDiff * 50)
+    : -50;
+
     if(figures.isPositive) {
-      adjustScore = Math.max(0, 100 - timeDiff * 50);
-    } else {
-      adjustScore = -50;
+      setIntervalTime(prevInterval => Math.max(500, prevInterval - 200))
     }
 
     adjustScore = Math.round(adjustScore);
-
     onFigureClick(adjustScore);
+    
     setFigures(null);
   }
 };

@@ -16,8 +16,9 @@
     padding: 20px;
     margin-top: -18.2%;
     margin-bottom: 2rem;
-    background-color: aquamarine;
-    border-bottom: 2px solid red;
+    background-color: #FFD700;
+
+    border-radius: 1rem;
   }
   
   .clickableFigure {

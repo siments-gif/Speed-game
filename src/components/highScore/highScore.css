@@ -1,32 +1,35 @@
 .highScoreTable {   
-        width: 55%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .highScoreTable button {
-        place-self: center;
-        margin-top: 1rem;
+   place-self: center;
+   margin-top: 1rem;
 }
 
 
 .highScoreTable h2 {
-        margin-bottom: 1rem;
-        text-align: center;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .highScoreTable table {
-        width: 100%;
-        border-collapse: collapse;
+  width: 100%;
+  background-color: #00B3B3;
+  border-collapse: collapse;
 }
 
 .highScoreTable th, 
 .highScoreTable td {
-        padding: 10px;
-        border: 2px solid black;
+  padding: 15px;
+  border: 1px solid #2F4F4F;
+
+  text-align: center;
 }
 
 .highScoreTable th {
-        background-color: aquamarine;
+  background-color: #FFD700;
 }
