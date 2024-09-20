@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const Figures = ({ onFigureClick }) => {
   const [figures, setFigures] = useState(null);
   const [appearTime, setAppearTime] = useState(null);
-  const [intervalTime, setIntervalTime] = useState(2000);
+  const [intervalTime, setIntervalTime] = useState(2000); // Setter intervaltid på 2s
   
   const set1 = [
     "/src/assets/figures/Set1/Backend_bakgrunn.png",
@@ -22,15 +22,15 @@ useEffect(() => {
   const randomImage = () => {
     const randomize = Math.random() < 0.75 ? set1 : set2;
     const randomId = Math.floor(Math.random() * randomize.length);
-    const isPositive = randomize === set1;
+    const isPositive = randomize === set1; // Ser om bilde som vises er fra set 1
     
     setFigures({
       src: randomize[randomId],
       isPositive: isPositive,
-      x: Math.random() * 80,
-      y: Math.random() * 80
+      x: Math.random() * 80, // Bruker bare 80 % av brettet sin x akse
+      y: Math.random() * 80 // Bruker bare 80 % av brettet sin y akse
     });
-    setAppearTime(Date.now());
+    setAppearTime(Date.now()); // Setter tiden figuren vises
   };
 
   randomImage();
@@ -42,7 +42,7 @@ useEffect(() => {
 
 const handleClicking = () => {
   if(figures) {
-    const presentTime = Date.now();
+    const presentTime = Date.now(); // Dokumenterer tiden
     const timeDiff = (presentTime - appearTime) / 1000;
 
     let adjustScore = figures.isPositive
@@ -50,10 +50,10 @@ const handleClicking = () => {
     : -50;
 
     if(figures.isPositive) {
-      setIntervalTime(prevInterval => Math.max(500, prevInterval - 200))
+      setIntervalTime(prevInterval => Math.max(500, prevInterval * 0.95)); // Reduserer intervaltiden med minimum grense på 500ms
     }
 
-    adjustScore = Math.round(adjustScore);
+    adjustScore = Math.round(adjustScore); // Runder av poengsummen
     onFigureClick(adjustScore);
     
     setFigures(null);

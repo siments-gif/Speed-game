@@ -12,7 +12,7 @@ const GameBoard = ({ gameEnding }) => {
   }
 
   const handleFigureScore = (adjustScore) => {
-    setScore(prevScore => prevScore + adjustScore)
+    setScore(prevScore => prevScore + adjustScore) // Setter sammen poengene før og etter for total
   };
 
   return (
