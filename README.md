@@ -1,45 +1,45 @@
-# Speed Game – Et reaksjonsklikkespill i React 🚀
+# Speed Game – A reaction click game in React 🚀
 
-Skoleprosjekt fra 2024 – Emne: JavaScript-rammeverk ved Gokstad Akademiet.
+School project from 2024 – Course: JavaScript Frameworks at Gokstad Akademiet.
 
-Et enkelt, men fullt funksjonelt reaksjonsspill laget for å øve på React-komponenter, hooks og state management. Klikk på figurer som dukker opp tilfeldig – positive gir poeng, negative trekker poeng. Tempoet øker gradvis, og høyeste score lagres i localStorage! 🎯
+A simple but fully functional reaction game made to practice React components, hooks and state management. Click on shapes that appear randomly, positive ones give points, negative ones deduct points. The pace increases gradually, and your highest score is saved in localStorage! 🎯
 
-Spillet kjøres lokalt via Vite. (Ingen live demo enda, men superenkelt å starte!)
+The game runs locally with Vite. (No live demo yet, but super easy to start!)
 
 ## Tech stack 🛠️
 
-- **Frontend:** React (med hooks: useState, useEffect, useRef)
-- **Bygg & verktøy:** Vite, npm, Git
-- **Styling:** CSS Modules – enkel
-- **Lagring:** Browser localStorage for highscore / lederbrett
+- **Frontend:** ReactJS (with hooks: useState and useEffect)
+- **Build & tools:** Vite, npm, Git
+- **Styling:** CSS Modules
+- **Storage:** Browser localStorage for highscore / leaderboard
 
-## Hovedfunksjoner ✨
+## Main features ✨
 
-- Tilfeldige figurer (positive/negative) dukker opp på spillbrett
-- Sanntids poeng- og tidstelling
-- Dynamisk vanskelighetsgrad: raskere spawn, høyere poeng/færre feilmargin
-- Intro-skjerm med navneinput + restart-mulighet
-- Lederbrett med lagret highscore (localStorage)
-- Komponentbasert struktur – lett å utvide (nye figurer eller effekter)
+- Random shapes (positive/negative) appear on the game board
+- Real time score and timer
+- Dynamic difficulty: faster spawns, higher points / less margin for error
+- Intro screen with name input + restart option
+- Leaderboard with saved highscore (localStorage)
+- Component based structure, easy to extend (new shapes or effects)
 
-## Hva jeg lærte / viste fram 📚
+## What I learned / demonstrated 📚
 
-- God bruk av React hooks for state og side-effekter
-- Håndtering av tidtakere og intervaller uten memory leaks
-- Enkel state management uten eksterne biblioteker
-- Responsivt design og brukeropplevelse-fokus i et spill
-- Strukturert kode med komponenter (GameBoard, Timer, Score, etc.)
+- Good use of React hooks for state and side effects
+- Handling timers and intervals without memory leaks
+- Simple state management without external libraries
+- Responsive design and user experience focus in a game
+- Structured code with components (GameBoard, Timer, Score, etc.)
 
-## Installasjon og kjøring 🚀
+## Installation and setup 🚀
 
 ```bash
-# Klon repoet
+# Clone the repo
 git clone https://github.com/siments-gif/Speed-game.git
 cd Speed-game
 
-# Installer avhengigheter
+# Install dependencies
 npm install
 
-# Start utviklingsserver
+# Start development server
 npm run dev
 ```
